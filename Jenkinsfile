@@ -8,7 +8,7 @@ pipeline {
 				dir('azure-vote/') {
 					script{
 						docker.withRegistry('https://index.docker.io/v1/', 'DockerHub'){
-								def image = docker.build(akshatparikh/jenkins_demo:latest)
+								def image = docker.build('akshatparikh/jenkins_demo:latest')
 								image.push()
 						}
 					}
